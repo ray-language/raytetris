@@ -1,4 +1,4 @@
-// raygame — the frame builder and line-diff painter (raytop's discipline at
+// raytetris — the frame builder and line-diff painter (raytop's discipline at
 // 30 fps): a frame is fixed lines, a repaint is absolute-move + overwrite of
 // only the lines that changed.
 import tetris;
@@ -40,7 +40,7 @@ pub fn frame(g: tetris.Game, hiscore: int) -> [string] {
         }
     }
     var out: [string] = [];
-    out.push("  ┌────────────────────┐   raygame");
+    out.push("  ┌────────────────────┐   raytetris");
     var y = 0;
     while (y < tetris.H) {
         var row = "  │";

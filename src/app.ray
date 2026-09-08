@@ -1,4 +1,4 @@
-// raygame — the 30 fps loop: input-or-frame-deadline, gravity on its own
+// raytetris — the 30 fps loop: input-or-frame-deadline, gravity on its own
 // clock, diff repaints. The hard-latency variant of the raytop pattern.
 import std/io;
 import std/fs;
@@ -17,8 +17,8 @@ fn write_now(s: string) {
 
 fn hiscore_path() -> string {
     match (env("HOME")) {
-        Option.Some(h) => h + "/.raygame_hiscore",
-        Option.None => "/tmp/.raygame_hiscore",
+        Option.Some(h) => h + "/.raytetris_hiscore",
+        Option.None => "/tmp/.raytetris_hiscore",
     }
 }
 
@@ -180,13 +180,13 @@ fn event_loop() -> int {
 
 pub fn play() -> int {
     if (!term.is_tty(0) || !term.is_tty(1)) {
-        eprint("raygame: needs a terminal");
+        eprint("raytetris: needs a terminal");
         return 1;
     }
     match (term.raw(fn() -> int { event_loop() })) {
         Result.Ok(code) => code,
         Result.Err(e) => {
-            eprint("raygame: " + e);
+            eprint("raytetris: " + e);
             1
         },
     }

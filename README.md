@@ -1,15 +1,34 @@
-# raygame
+# raytetris
 
 Tetris de terminal a 30 fps, escrito en [raylang](https://github.com/ray-language/raylang). Es la app de **latencia dura**: bucle de juego con reloj de frame + reloj de gravedad independientes, input sin bloqueo (`io.read_timeout` hasta el próximo frame), redibujado diferencial por línea (mover una pieza repinta ≤ 4 líneas — hay test), colores ANSI por pieza, niveles que aceleran, y high score persistente.
 
 ```text
-$ raygame            # ←→ mover · ↑ rotar · ↓ bajar · espacio soltar · p pausa · r reiniciar · q salir
-$ raygame --bench    # los números de latencia (ver abajo)
+$ raytetris            # ←→ mover · ↑ rotar · ↓ bajar · espacio soltar · p pausa · r reiniciar · q salir
+$ raytetris --bench    # los números de latencia (ver abajo)
 ```
+
+## Cómo correrlo en local
+
+1. **Instala raylang.** Sigue las instrucciones del repo oficial:
+   [github.com/ray-language/raylang](https://github.com/ray-language/raylang).
+   Verifica con `ray --version`.
+2. **Clona o descarga este repo.**
+
+   ```sh
+   git clone https://github.com/ray-language/raytetris.git
+   cd raytetris
+   ```
+3. **Córrelo.** Con la VM directo desde el fuente, o compila el binario nativo:
+
+   ```sh
+   ray run src/main.ray                          # jugar (VM)
+   ray build --native src/main.ray -o raytetris --release  # compilar nativo
+   ./raytetris                                    # jugar el binario
+   ```
 
 ## Los números que esta app vino a medir
 
-`raygame --bench` en Apple Silicon:
+`raytetris --bench` en Apple Silicon:
 
 | Métrica | Nativo | VM |
 |---|---|---|
@@ -66,8 +85,10 @@ Anotados en `raylang/IDEAS.md` §72:
 ```sh
 ray test
 ray run src/main.ray --bench
-ray build --native src/main.ray -o raygame --release
+ray build --native src/main.ray -o raytetris --release
 ```
 
 Estructura: `src/main.ray` · `tetris.ray` (reglas puras) · `screen.ray`
 (frame + diff) · `app.ray` (bucle + bench).
+</content>
+</invoke>

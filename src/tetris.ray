@@ -1,4 +1,4 @@
-// raygame — tetris rules, pure and clock-free: the app layer feeds inputs
+// raytetris — tetris rules, pure and clock-free: the app layer feeds inputs
 // and gravity ticks; everything here is deterministic given the RNG seed.
 import std/random;
 

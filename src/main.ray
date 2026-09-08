@@ -1,4 +1,4 @@
-// raygame — tetris in the terminal at 30 fps.
+// raytetris — tetris in the terminal at 30 fps.
 import std/random;
 import app;
 
@@ -12,7 +12,7 @@ fn main() -> int {
             random.seed(42);
         }
         if (a == "--help" || a == "-h") {
-            eprint("usage: raygame [--bench] [--seed]");
+            eprint("usage: raytetris [--bench] [--seed]");
             eprint(
                 "  ←→ mover · ↑ rotar · ↓ bajar · espacio soltar · p pausa · r reiniciar · q salir"
             );

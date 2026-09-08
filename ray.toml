@@ -1,5 +1,5 @@
 [package]
-name = "raygame"
+name = "raytetris"
 version = "0.1.0"
 
 [dependencies]
