@@ -165,6 +165,7 @@ fn clear_lines(g: Game) -> int {
         while (x < W) {
             if (g.board[y * W + x] == 0) {
                 full = false;
+                break;
             }
             x = x + 1;
         }
