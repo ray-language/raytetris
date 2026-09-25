@@ -173,7 +173,12 @@ fn event_loop() -> int {
     }
     write_now(e + "[?1049l" + e + "[?25h");
     print(
-        "score " + to_string(a.g.score) + " · lines " + to_string(a.g.lines) + " · hi " + to_string(a.hiscore)
+        "score "
+            + to_string(a.g.score)
+            + " · lines "
+            + to_string(a.g.lines)
+            + " · hi "
+            + to_string(a.hiscore)
     );
     0
 }
@@ -214,7 +219,11 @@ pub fn bench() -> int {
     }
     let build_us = time.monotonic() - t0;
     print(
-        "frame build+diff: 1000 frames in " + to_string(build_us) + " ms = " + to_string(build_us * 1000 / 1000) + " us/frame"
+        "frame build+diff: 1000 frames in "
+            + to_string(build_us)
+            + " ms = "
+            + to_string(build_us * 1000 / 1000)
+            + " us/frame"
     );
     var worst = 0;
     var total = 0;
@@ -230,7 +239,11 @@ pub fn bench() -> int {
         i = i + 1;
     }
     print(
-        "sleep(33) x60: avg " + to_string(total / 60) + " ms, worst " + to_string(worst) + " ms (target 33)"
+        "sleep(33) x60: avg "
+            + to_string(total / 60)
+            + " ms, worst "
+            + to_string(worst)
+            + " ms (target 33)"
     );
     0
 }
