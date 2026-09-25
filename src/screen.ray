@@ -88,6 +88,7 @@ fn next_row(kind: int, row: int) -> string {
         for (cx, cy) in cells.iter() {
             if (cx == x && cy == row) {
                 hit = true;
+                break;
             }
         }
         out = out + if (hit) { color(kind) + "██" + reset() } else { "  " };
